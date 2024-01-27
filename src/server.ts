@@ -9,7 +9,7 @@ const app = express();
 import path from "path"
 import { normalQuery, phraseQuery } from "./config/queryBuilder";
 
-app.listen(3000, () => { console.log("app listen on port 3000") })
+app.listen(3001, () => { console.log("app listen on port 3000") })
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
