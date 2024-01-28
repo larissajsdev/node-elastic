@@ -32,13 +32,13 @@ const storage = multer.diskStorage({
 
 
 app.get("/search", async (req, res) => {
-  const { term, initialDate, finalDate, type, page, size, isPhrase } = req.query;
+  const { termo, dataInicial, dataFinal, tipoEdicao, pagina, size, quantidade } = req.query;
 
-  if (term.split(" ").length > 1) {
-    const response = await client.search(phraseQuery(term))
+  if (termo.split(" ").length > 1) {
+    const response = await client.search(phraseQuery(termo))
     res.status(200).json(response)
   } else {
-    const response = await client.search(normalQuery(term))
+    const response = await client.search(normalQuery(termo))
     res.status(200).json(response)
   }
 })
